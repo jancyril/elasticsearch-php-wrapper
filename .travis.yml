@@ -1,0 +1,11 @@
+language: php
+php: 
+  - '7.0'
+services:
+  - elasticsearch
+before_script:
+  - sleep 15
+script:
+  - composer install
+  - mv env.testing .env
+  - phpunit
