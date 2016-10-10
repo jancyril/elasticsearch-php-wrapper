@@ -1,7 +1,6 @@
 <?php
 
 use Janitor\ElasticSearch;
-use Elasticsearch\ClientBuilder;
 
 class ElasticSearchTest extends PHPUnit_Framework_TestCase
 {
