@@ -20,53 +20,71 @@ Provide your Elasticsearch host - either via environment variable (preferred) or
 
 Create a new instance of the ElasticSearch.php class.
 
-`$elastic = new ElasticSearch;`
+```php
+$elastic = new ElasticSearch;
+```
 
 Set and create your index.
 
-`$elastic->setIndex('testing');`
+```php
+$elastic->setIndex('testing');
 
-`$elastic->createIndex();`
+$elastic->createIndex();
+```
 
 Set your types and the mapping for it.
 
-`$elastic->setType('users');`
+```php
+$elastic->setType('users');
 
-`$elastic->setMapping($array);`
+$elastic->setMapping($array);
+```
 
 ## Example Usage
 
 Adding a new document.
 
-`$data = ['id' => 1, 'username' => 'jancyril', 'role' => 'admin'];`
+```php
+$data = ['id' => 1, 'username' => 'jancyril', 'role' => 'admin'];
 
-`$elastic->put($data);`
+$elastic->put($data);
+```
 
 Adding documents in bulk.
 
-`$data = [
+```php
+$data = [
     ['id' => 1, 'username' => 'jancyril', 'role' => 'admin'],
     ['id' => 2, 'username' => 'foxlance', 'role' => 'developer'],
     ['id' => 3, 'username' => 'aceraven777', 'role' => 'developer'],
     ['id' => 4, 'username' => 'admin', 'role' => 'developer']
-];`
+];
 
-`$elastic->bulk($data);`
+$elastic->bulk($data);
+```
 
 Updating a document.
 
-`$data = ['username' => 'JC'];`
+```php
+$data = ['username' => 'JC'];
 
-`$elastic->put(1, $data);`
+$elastic->put(1, $data);
+```
 
 Deleting a document
 
-`$elastic->delete(1);`
+```php
+$elastic->delete(1);
+```
 
 Getting a document
 
-`$elastic->get(1);`
+```php
+$elastic->get(1);
+```
 
 Searching a document
 
-`$elastic->match('username', 'jancyril');`
+```php
+$elastic->match('username', 'jancyril');
+```
