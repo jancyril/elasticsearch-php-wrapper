@@ -1,4 +1,4 @@
-# ElasticSearch PHP Helper
+# ElasticSearch PHP Wrapper
 
 [![Build Status](https://travis-ci.org/jancyril/elasticsearch-php-helper.svg?branch=master)](https://travis-ci.org/jancyril/elasticsearch-php-helper)
 

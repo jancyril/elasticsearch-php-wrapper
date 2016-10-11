@@ -6,7 +6,7 @@
  *
  * @author Jan Cyril Segubience <jancyrilsegubience@gmail.com>
  *
- * @link https://github.com/jancyril/elasticsearch-php-helper
+ * @link https://github.com/jancyril/elasticsearch-php-wrapper
  */
 
 namespace Janitor;
