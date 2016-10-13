@@ -1,11 +1,18 @@
 language: php
+
 php: 
   - '7.0'
+
 services:
   - elasticsearch
+
 before_script:
-  - sleep 15
+  - sleep 10
+
 script:
   - composer install
   - mv env.testing .env
-  - phpunit
+  - phpunit --coverage-clover=coverage.xml
+  
+after_success:
+  - bash <(curl -s https://codecov.io/bash)

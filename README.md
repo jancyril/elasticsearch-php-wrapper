@@ -1,6 +1,7 @@
 # ElasticSearch PHP Wrapper
 
 [![Build Status](https://travis-ci.org/jancyril/elasticsearch-php-wrapper.svg?branch=master)](https://travis-ci.org/jancyril/elasticsearch-php-wrapper)
+[![codecov](https://codecov.io/gh/jancyril/elasticsearch-php-wrapper/branch/master/graph/badge.svg)](https://codecov.io/gh/jancyril/elasticsearch-php-wrapper)
 
 This class utilizes the official PHP Client for Elasticsearch that can be found [here](https://github.com/elastic/elasticsearch-php).
 
