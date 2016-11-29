@@ -195,7 +195,7 @@ class ElasticSearch
      *
      * @return array
      */
-    public function all($limit = 50, $offset = 0): array
+    public function all(int $limit = 50, int $offset = 0): array
     {
         $params = [
             'index' => $this->getIndex(),
@@ -303,7 +303,7 @@ class ElasticSearch
      *
      * @return array
      */
-    public function match(string $field, $value, $limit = 50, $offset = 0): array
+    public function match(string $field, $value, int $limit = 50, int $offset = 0): array
     {
         $params = [
             'index' => $this->getIndex(),
@@ -339,7 +339,7 @@ class ElasticSearch
      *
      * @return array
      */
-    public function matchAny(string $field, $value, $limit = 50, $offset = 0): array
+    public function matchAny(string $field, $value, int $limit = 50, int $offset = 0): array
     {
         $params = [
             'index' => $this->getIndex(),
@@ -375,7 +375,7 @@ class ElasticSearch
      *
      * @return array
      */
-    public function multiMatch(array $fields, $value, $limit = 100, $offset = 0): array
+    public function multiMatch(array $fields, $value, int $limit = 100, int $offset = 0): array
     {
         $params = [
             'index' => $this->getIndex(),
@@ -434,6 +434,20 @@ class ElasticSearch
      * @return array
      */
     private function extract(array $data): array
+    {
+        return collect($data)->pluck('_source')->toArray();
+    }
+
+    /**
+     * This method works the same way with extract(), use
+     * this instead if you are not using laravel or
+     * do not have the Illuminate\Support package.
+     *
+     * @param array $data
+     *
+     * @return array
+     */
+    private function extractSecondOption(array $data): array
     {
         $documents = [];
 
