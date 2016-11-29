@@ -1,17 +1,17 @@
 # ElasticSearch PHP Wrapper
 
 [![Build Status](https://travis-ci.org/jancyril/elasticsearch-php-wrapper.svg?branch=master)](https://travis-ci.org/jancyril/elasticsearch-php-wrapper)
-[![codecov](https://codecov.io/gh/jancyril/elasticsearch-php-wrapper/branch/master/graph/badge.svg)](https://codecov.io/gh/jancyril/elasticsearch-php-wrapper)
 
 This class utilizes the official PHP Client for Elasticsearch that can be found [here](https://github.com/elastic/elasticsearch-php).
 
-This class contains methods for common operation for accessing and manipulating documents in Elasticsearch. This will help you avoid the repetitive task of setting up the Elasticsearch client builder everytime you need to use it.
+This class contains methods for common operations to access and manipulate documents in Elasticsearch. This will help you avoid the repetitive task of setting up the Elasticsearch client builder everytime you need to use it.
 
 `Note: This class contains some PHP 7 specific syntax.`
 
 ## Requirement
 
 * PHP Client for Elasticsearch
+* Elasticsearch 2.x
 
 ## Getting Started
 
@@ -33,7 +33,7 @@ $elastic->setIndex('testing');
 $elastic->createIndex();
 ```
 
-Set your types and the mapping for it.
+Set your type and the mapping.
 
 ```php
 $elastic->setType('users');
@@ -69,7 +69,7 @@ Updating a document.
 ```php
 $data = ['username' => 'JC'];
 
-$elastic->put(1, $data);
+$elastic->update(1, $data);
 ```
 
 Deleting a document
